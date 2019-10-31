@@ -37,7 +37,7 @@ We're going to practice building a stateful class component with this project. E
 - The `completed` field should default to `false` and will be the field that we toggle when we complete a todo.
 - The `id` field is a unique `Time Stamp` that will be assigned by `Date.now()`.
 
-#### Instructions
+#### Instructions 
 
 - **Don't focus on styling yet**. We want you to worry about function over form today.
 - Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
