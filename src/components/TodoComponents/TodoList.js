@@ -8,6 +8,12 @@ const TodoList = props => {
 
     return(
         <div className="todo-list">
+            {props.todolist.map (item => (
+                <TodoItem
+                    key={item.id}
+                    item={item}
+                />
+            ))}
         </div>
     );
 
