@@ -5,10 +5,19 @@ import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import "./Todo.css";
 
 const TodoItem = props => {
+
+    let cardClass = "toDoItem"
+    if (props.item.complete) {
+        cardClass = cardClass + " complete"
+    }
+
+    const handleClick = () => {
+        props.toggleComplete(props.item.id);
+    }
+
     return (
-        <Card className="toDoItem">
-            <CheckBoxOutlineBlankIcon className="not-completed"/>
-            <h4>{props.item.task}</h4>
+        <Card onClick={handleClick} className={cardClass}>
+            <h4><CheckBoxOutlineBlankIcon className="not-completed"/> {props.item.task}</h4>
         </Card>
     );
 }

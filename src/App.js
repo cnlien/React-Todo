@@ -1,21 +1,10 @@
 import React from 'react';
-import {Container} from 'reactstrap'
+import {Container, Card} from 'reactstrap'
 
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
-const todoData = [
-  {
-    task: 'Organize Garage',
-    id: 1528817077286,
-    completed: false
-  },
-  {
-    task: 'Bake Cookies',
-    id: 1528817084358,
-    completed: false
-  }
-];
+const todoData = [];
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -43,16 +32,24 @@ class App extends React.Component {
   };
 
   render() {
+    
     return(
-
-      <Container>
-        <h1>To Do List</h1>
+      
+      <Container className="main-container">
         
-        <TodoForm addTask={this.addTask} />
+        <Card className="add-task">
+          <h1>Add a Task</h1>
+          <TodoForm addTask={this.addTask} />
+        </Card>
 
-        <TodoList
-          todolist = {this.state.todolist}
-        />
+        <Card className ="task-list">
+          <h1>To Do List</h1>
+          <TodoList todolist = {this.state.todolist}/>
+        </Card>
+
+        {console.log(this.addTask)}
+        {console.log(this.state.todolist)}
+
       </Container>
 
 

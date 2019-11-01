@@ -1,5 +1,5 @@
 import React from "react";
-import {Form, Input, Button, Col, Row, Card} from "reactstrap";
+import {Form, Input, Button, Col, Row} from "reactstrap";
 import "./Todo.css";
 
 
@@ -37,18 +37,21 @@ class TodoForm extends React.Component {
     render() {
         return (
             <Form onSubmit = {this.handleSubmit}>
-                <Col>
-                    <Input
-                        onChange = {this.handleChange}
-                        placeholder = "What Do You Need To Do?"
-                        type = "text"
-                        name = "task"
-                        value = {this.state.taskName}
-                    />
-                </Col>
-                <Col>
-                    <Button>Add Task</Button>
-                </Col>
+                <Row className="newTaskForm">
+                    <Col>
+                        <Input
+                            onChange = {this.handleChange}
+                            placeholder = "What Do You Need To Do?"
+                            type = "text"
+                            name = "task"
+                            value = {this.state.taskName}
+                        />
+                    </Col>
+                    
+                    <Col>
+                        <Button>Add Task</Button>
+                    </Col>
+                </Row>
             </Form>
         );
     }
