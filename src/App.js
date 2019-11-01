@@ -1,5 +1,8 @@
 import React from 'react';
+import {Container} from 'reactstrap'
+
 import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from './components/TodoComponents/TodoForm';
 
 const todoData = [
   {
@@ -13,6 +16,7 @@ const todoData = [
     completed: false
   }
 ];
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
 
@@ -23,29 +27,35 @@ class App extends React.Component {
     };
   }
 
-  // addTask = taskName => {
-  //   this.setState({
-  //     tasks: [
-  //       ...this.state.tasks,
-  //       {
-  //         task: taskName,
-  //         id: Date.now(),
-  //         completed: false
-  //       }
-  //     ]
-  //   });
-  // }
+  addTask = taskName => {
+    console.log ("add item: ", taskName);
+
+    this.setState({
+      todolist: [
+        ...this.state.todolist,
+        {
+          task: taskName,
+          id: Date.now(),
+          completed: false
+        }
+      ]
+    });
+  };
 
   render() {
     return(
-      <div>
+
+      <Container>
         <h1>To Do List</h1>
-        <p>To Do: {this.state.task}</p>
+        
+        <TodoForm addTask={this.addTask} />
+
         <TodoList
           todolist = {this.state.todolist}
         />
+      </Container>
 
-      </div>
+
     );
   }
 }

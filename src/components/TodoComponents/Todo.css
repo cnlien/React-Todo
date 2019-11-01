@@ -1,0 +1,23 @@
+.todo-list {
+    display: flex;
+    flex-flow: row-wrap;
+}
+
+.toDoItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    flex-basis: 100%;
+}
+
+.toDoItem .not-completed{
+    margin: 0 10px 5px 10px;
+
+}
+
+.toDoItem h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}

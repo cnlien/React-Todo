@@ -1,13 +1,17 @@
 import React from "react";
+import {Form, Input, Button, Col, Row, Card} from "reactstrap";
+import "./Todo.css";
+
 
 class TodoForm extends React.Component {
+    
     constructor() {
         super();
         this.state = {
             taskName:""
         };
     }
-
+    
     handleChange = e => {
         this.setState({
             taskName: e.target.value
@@ -16,25 +20,36 @@ class TodoForm extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        if (this.state.taskName !== "") {
-            this.props.addTask(this.state.task);
-            this.setState({
-                taskname: ""
-            });
-        }
+        this.props.addTask(this.state.taskName);
+        this.setState({
+            taskName: ""
+        });
+
+        // if (this.state.taskName !== "") {
+        //     this.props.addTask(this.state.taskName);
+        //     this.setState({
+        //         taskname: ""
+        //     });
+        // }
     };
+
 
     render() {
         return (
-            <form onSubmit = {this.handleSubmit}>
-                <input
-                    onChange = {this.handleChange}
-                    type = "text"
-                    name = "task"
-                    value = {this.state.taskName}
-                />
-                <button>Add Task</button>
-            </form>
+            <Form onSubmit = {this.handleSubmit}>
+                <Col>
+                    <Input
+                        onChange = {this.handleChange}
+                        placeholder = "What Do You Need To Do?"
+                        type = "text"
+                        name = "task"
+                        value = {this.state.taskName}
+                    />
+                </Col>
+                <Col>
+                    <Button>Add Task</Button>
+                </Col>
+            </Form>
         );
     }
 }
