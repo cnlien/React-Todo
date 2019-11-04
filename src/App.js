@@ -3,18 +3,41 @@ import {Container, Card} from 'reactstrap'
 
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import './components/TodoComponents/Todo.css';
 
 const todoData = [];
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
 
-  constructor() {
-    super();
-    this.state = {
+    state = {
       todolist: todoData,
     };
-  }
+
+  toggleComplete = itemId => {
+    console.log("toggleComplete: ", itemId);
+
+    this.setState({
+      todolist: this.state.todolist.map(item => {
+        if (item.id === itemId) {
+          return {
+            ...item,
+            completed: !item.completed
+          };
+        }
+        return item;
+      })
+    });
+  };
+
+  clearComplete = () => {
+    console.log("clearPurchased");
+    this.setState ({
+      todolist: this.state.todolist.filter(item =>{
+        return !item.completed;
+      })
+    });
+  };
 
   addTask = taskName => {
     console.log ("add item: ", taskName);
@@ -44,7 +67,11 @@ class App extends React.Component {
 
         <Card className ="task-list">
           <h1>To Do List</h1>
-          <TodoList todolist = {this.state.todolist}/>
+          <TodoList
+            todolist = {this.state.todolist}
+            toggleComplete={this.toggleComplete}
+            clearComplete={this.clearComplete}
+          />
         </Card>
 
         {console.log(this.addTask)}

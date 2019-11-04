@@ -7,7 +7,7 @@ import "./Todo.css";
 const TodoItem = props => {
 
     let cardClass = "toDoItem"
-    if (props.item.complete) {
+    if (props.item.completed) {
         cardClass = cardClass + " complete"
     }
 
@@ -17,7 +17,7 @@ const TodoItem = props => {
 
     return (
         <Card onClick={handleClick} className={cardClass}>
-            <h4><CheckBoxOutlineBlankIcon className="not-completed"/> {props.item.task}</h4>
+            <h4>{props.item.task}</h4>
         </Card>
     );
 }
