@@ -1,0 +1,124 @@
+$break-mobile: 400px;
+$break-tablet: 768px;
+$break-large: 1200px;
+
+#toDoFormContainer {
+
+    .toDoTitle {
+        margin-bottom: 20px;
+
+        h1 {
+            font-size: 32px;
+            letter-spacing: 0.1rem;
+        }
+    }
+
+    .toDoForm {
+        display: flex;
+        flex-flow: row nowrap;
+       
+    
+        .toDoInputs {
+            width: 100%;
+            display: flex;
+
+            @media screen and(max-width: $break-tablet){
+                flex-flow: column;
+            }
+
+            .toDoInput {
+                flex-grow: 1;
+                padding-right: 20px;
+
+                @media screen and(max-width: $break-tablet){
+                    padding-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+    
+            .toDoButton {
+                display: flex;
+    
+                .toDoAddItem {
+                    font-size: 13px;
+                    max-width: 100px;
+                    padding: 0 40px;
+
+                    @media screen and(max-width: $break-tablet){
+                        padding: 10px;
+                        max-width: 50%;
+                        width: 50%;
+                    }
+                    @media screen and(max-width: $break-mobile){
+                        padding: 10px;
+                        max-width: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#toDoListContainer {
+    color: #07224B;
+    margin: 0;
+    margin-top: 40px;
+
+    .container {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .toDoItems {
+
+        .toDoItem {
+            background: white;
+            border-radius: 3px;
+            padding: 20px;
+
+            .toDoItem--title {
+                font-size: 16px;
+                letter-spacing: .02rem;
+                line-height: 22px;
+                font-weight: 300;
+            }
+
+            .toDoItem--data {
+                font-size:.7rem;
+                padding-bottom:20px;
+
+                p {
+                    margin:0;
+                    padding:0;
+                }
+            }
+
+            .toDoItem--operations {
+                display: flex;
+                border-bottom: solid thin #07224B;
+                padding-bottom: 20px;
+                margin-bottom: 10px;
+
+                button {
+                    margin-top: 20px;
+                    background-color:#07224B;
+                }
+                button:hover {
+                    background-color: #113F84;
+                }
+            }
+
+            .toDoItem--editIcons {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-end;
+
+                .icon {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
