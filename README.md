@@ -4,10 +4,10 @@ We're going to practice building a stateful class component with this project. E
 
 ## Initializing the project.
 
-- `Fork and clone` this project and cd into your cloned version.
-- `npm install` or `yarn install` will pull in all the node_modules you need.
-- `npm start` or `yarn start` will start a development server on your `http://localhost:3000`.
-  - If npm or yarn asks you to select different port with some error message, just confirm and it will pull it up on port 3001. This simply means you have a development server up and running on that port already.
+- Fork and clone this project and cd into your cloned version.
+- `npm install` will pull in all the node_modules you need.
+- `npm start` will start a development server on your `http://localhost:3000`.
+  - If npm asks you to select different port with some error message, just confirm and it will pull it up on port 3001. This simply means you have a development server up and running on that port already.
 
 ## Instructions
 
@@ -37,7 +37,7 @@ We're going to practice building a stateful class component with this project. E
 - The `completed` field should default to `false` and will be the field that we toggle when we complete a todo.
 - The `id` field is a unique `Time Stamp` that will be assigned by `Date.now()`.
 
-#### Instructions 
+#### Instructions
 
 - **Don't focus on styling yet**. We want you to worry about function over form today.
 - Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
