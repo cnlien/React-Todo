@@ -11,31 +11,7 @@ import TodoList from './components/TodoList'
 import Logo from './images/check-logo.png'
 
 // Data
-const toDoData = [
-  {
-    id: "1",
-    task: "Add more todo items",
-    completed: false
-  },
-
-  {
-    id: "2",
-    task: "Add more todo items",
-    completed: false
-  },
-
-  {
-    id: "3",
-    task: "Add more todo items",
-    completed: false
-  },
-  
-  {
-    id: "4",
-    task: "Add more todo items",
-    completed: false
-  }
-]
+const toDoData = []
 
 class App extends React.Component {
 
