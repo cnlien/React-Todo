@@ -5,23 +5,32 @@ import './Todo.scss'
 // Comoponents
 import TodoItem from './TodoItem'
 
-class TodoList extends React.Component {
-
-    render() {
-        return (
+const TodoList = props => {
+    return (
         <div id="toDoListContainer">
+
             <div className="container-fluid">
                 <div className="container toDoItems">
-                    <div className="row">
-                        <TodoItem />
-                        <TodoItem />
-                        <TodoItem />
-                    </div>
+                    {props.todoList.map (item => (
+                        <TodoItem
+                            key={item.id}
+                            item = {item}
+                            toggleComplete = {props.toggleComplete}
+                        />
+                    ))}
                 </div>
-            </div>            
+                <div className="container clear-container">
+                    <button
+                        className="btn-light btn clear-todo"
+                        onClick={props.clearComplete}
+                    >
+                        Clear Complete
+                    </button>          
+                </div>
+            </div>  
         </div>
-        );
-    }
+    );
 }
 
 export default TodoList;
+  
